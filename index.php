@@ -1,3 +1,49 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require_once '../vendor/phpmailer/phpmailer/src/Exception.php';
+require_once '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require_once '../vendor/phpmailer/phpmailer/src/SMTP.php';
+
+// passing true in constructor enables exceptions in PHPMailer
+$mail = new PHPMailer(true);
+
+try {
+    // Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER; // for detailed debug output
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->Username = 'kissleywize10@gmail.com'; // YOUR gmail email
+    $mail->Password = 'youngking'; // YOUR gmail password
+
+    // Sender and recipient settings
+    $mail->setFrom('kissleywize10@gmail.com', 'Okulonye Kingsley');
+    $mail->addAddress('support@vemaloan.com', 'New Message');
+    $mail->addReplyTo('kissleywize10@gmail.com', 'Okulonye Kingsley'); // to set the reply to
+
+    // Setting the email content
+    $mail->IsHTML(true);
+    $mail->Subject = "New Contact Details";
+    $mail->Body = '<h2>Customer Contact Details!</h2>
+    <p><b>Name:</b> '.$fullname.'</p>
+    <p><b>Email:</b> '.$email.'</p>
+    <p><b>Phone Number:</b> '.$phonenumber.'</p>
+    <p><b>Subject:</b> '.$subject.'</p>
+    <p><b>Message:</b> '.$message.'</p>';
+  
+    $mail->send();
+    echo "Email message sent.";
+} catch (Exception $e) {
+    echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +51,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Personal Portfolio</title>
 
   <!--
     - favicon
@@ -42,11 +88,11 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/my-avatar.png" alt="Kingsley hanrick" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Richard hanrick</h1>
+          <h1 class="name" title="Kingsley hanrick">Okulonye Kingsley</h1>
 
           <p class="title">Web developer</p>
         </div>
@@ -74,7 +120,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:richard@example.com" class="contact-link">richard@example.com</a>
+              <a href="mailto:Kingsley@example.com" class="contact-link">kissleywize10@gmail.com</a>
             </div>
 
           </li>
@@ -88,24 +134,24 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
+              <a href="tel:+12133522795" class="contact-link">+2348108698332</a>
             </div>
 
           </li>
 
-          <li class="contact-item">
+           <!--<li class="contact-item">
 
             <div class="icon-box">
               <ion-icon name="calendar-outline"></ion-icon>
             </div>
 
-            <div class="contact-info">
+           <div class="contact-info">
               <p class="contact-title">Birthday</p>
 
               <time datetime="1982-06-23">June 23, 1982</time>
             </div>
 
-          </li>
+          </li>-->
 
           <li class="contact-item">
 
@@ -116,7 +162,7 @@
             <div class="contact-info">
               <p class="contact-title">Location</p>
 
-              <address>Sacramento, California, USA</address>
+              <address>Asaba, Delta State, Nigeria</address>
             </div>
 
           </li>
@@ -127,20 +173,26 @@
 
         <ul class="social-list">
 
+  <li class="social-item">
+            <a href="https://github.com/kissleywize" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://www.facebook.com/profile.php?id=100070207226746" class="social-link">
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://twitter.com/bigman_kings?s=21&t=nF4KGZ7sBc1f1aH0JHaG5w" class="social-link">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://instagram.com/bigman.kings?igshid=YmMyMTA2M2Y=" class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -181,9 +233,9 @@
             <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
 
-          <li class="navbar-item">
+          <!--<li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
+          </li>-->
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
@@ -209,17 +261,12 @@
 
         <section class="about-text">
           <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
+            I'm a full-stack web developer from Delta State, Nigeria. I'm a logical and results-driven Web Developer dedicated to building and optimizing user-focused websites for customers with various business objectives.
           </p>
 
           <p>
             My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
+            Judicious and creative when crafting effective websites, apps and platforms to propel competitive advantage and revenue growth.
           </p>
         </section>
 
@@ -230,9 +277,27 @@
 
         <section class="service">
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+          <h3 class="h3 service-title">What I'm doing</h3>
 
           <ul class="service-list">
+
+          </li>
+
+          <li class="service-item">
+
+            <div class="service-icon-box">
+              <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+            </div>
+
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">Web development</h4>
+
+              <p class="service-item-text">
+                High-quality development of sites at the professional level.
+              </p>
+            </div>
+
+          </li>
 
             <li class="service-item">
 
@@ -249,19 +314,19 @@
                 </p>
               </div>
 
-            </li>
+          
 
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/icon-app.svg" alt="CMS icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
+                <h4 class="h4 service-item-title">CMS</h4>
 
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  Professional development, integration and management of wordpress websites.
                 </p>
               </div>
 
@@ -270,30 +335,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/icon-photo.svg" alt="web hosting icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
+                <h4 class="h4 service-item-title">Web hostiog</h4>
 
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
-
-                <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  Generated web hosting presence to accommodate specified needs and maintain files on account.
                 </p>
               </div>
 
@@ -325,7 +374,7 @@
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    Kingsley was hired to create a corporate identity. We were very pleased with the work done. He has a
                     lot of experience
                     and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
                     consectetur adipiscing
@@ -347,7 +396,7 @@
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    Kingsley was hired to create a corporate identity. We were very pleased with the work done. He has a
                     lot of experience
                     and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
                     consectetur adipiscing
@@ -369,7 +418,7 @@
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    Kingsley was hired to create a corporate identity. We were very pleased with the work done. He has a
                     lot of experience
                     and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
                     consectetur adipiscing
@@ -391,7 +440,7 @@
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    Kingsley was hired to create a corporate identity. We were very pleased with the work done. He has a
                     lot of experience
                     and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
                     consectetur adipiscing
@@ -437,7 +486,7 @@
 
               <div data-modal-text>
                 <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  Kingsley was hired to create a corporate identity. We were very pleased with the work done. She has a
                   lot of experience
                   and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
                   consectetur adipiscing
@@ -532,32 +581,29 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">University school of the arts</h4>
+              <h4 class="h4 timeline-item-title">Federal University Of Petroleum Resources Warri Nigeria</h4>
 
-              <span>2007 — 2008</span>
+              <span>2017 — 2021</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Intercalated bachelor of science computer and information sciences.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
+              <h4 class="h4 timeline-item-title">Orient Academy</h4>
 
-              <span>2006 — 2007</span>
+              <span>2011 — 2017</span>
 
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
+                SSC in scince.
               </p>
 
             </li>
 
-            <li class="timeline-item">
+           <!-- <li class="timeline-item">
 
               <h4 class="h4 timeline-item-title">High school of art and design</h4>
 
@@ -569,7 +615,7 @@
                 eos.
               </p>
 
-            </li>
+            </li>-->
 
           </ol>
 
@@ -589,28 +635,26 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Creative director</h4>
+              <h4 class="h4 timeline-item-title">Web developer</h4>
 
-              <span>2015 — Present</span>
+              <span>2019 — Present</span>
 
               <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
+                
+Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-end development using PHP to maintain website integrity.
               </p>
 
             </li>
 
+            
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Art director</h4>
+              <h4 class="h4 timeline-item-title">Wordpress developer</h4>
 
-              <span>2013 — 2015</span>
+              <span>2019 — 2022</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Provided full-stack website development using WordPress. Provided security maintenance and patching on website interface to maintain viability after launch.
               </p>
 
             </li>
@@ -619,15 +663,14 @@
 
               <h4 class="h4 timeline-item-title">Web designer</h4>
 
-              <span>2010 — 2013</span>
+              <span>2019 — 2021</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Created designs and layouts of website, web pages. Created brand new website, improved and updated already existing site.
               </p>
 
             </li>
+
 
           </ol>
 
@@ -642,7 +685,32 @@
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
+                <h5 class="h5">Web development</h5>
+                <data value="99">99%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 99%;"></div>
+              </div>
+
+            </li>
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">HTML</h5>
+                <data value="95">95%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Css</h5>
                 <data value="80">80%</data>
               </div>
 
@@ -655,12 +723,12 @@
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
+                <h5 class="h5">Php</h5>
+                <data value="80">80%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+                <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
 
             </li>
@@ -668,12 +736,12 @@
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
+                <h5 class="h5">Javascript</h5>
+                <data value="78">78%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
+                <div class="skill-progress-fill" style="width: 78%;"></div>
               </div>
 
             </li>
@@ -682,11 +750,11 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
+                <data value="90">90%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
+                <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
 
             </li>
@@ -770,7 +838,7 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="https://amazon-xmas-giveaway.brighterstar.in/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -788,7 +856,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="https://bexequipment.oneworldcourier.org/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -798,7 +866,7 @@
                   <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Orizon</h3>
+                <h3 class="project-title">E-Commerce</h3>
 
                 <p class="project-category">Web development</p>
 
@@ -806,7 +874,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+              <a href="https://www.oneworldcourier.org/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -816,15 +884,15 @@
                   <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
+                <h3 class="project-title">Freight</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Web development</p>
 
               </a>
             </li>
 
             <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+              <a href="https://charity.brighterstar.in/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -834,15 +902,15 @@
                   <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Brawlhalla</h3>
+                <h3 class="project-title">Charity</h3>
 
-                <p class="project-category">Applications</p>
+                <p class="project-category">Web development</p>
 
               </a>
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+              <a href="https://vemaloan.com/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -852,15 +920,15 @@
                   <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
                 </figure>
 
-                <h3 class="project-title">DSM.</h3>
+                <h3 class="project-title">Finance</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Web development</p>
 
               </a>
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+              <a href="https://brighterstar.in/">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -870,14 +938,14 @@
                   <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">MetaSpark</h3>
+                <h3 class="project-title">Counter</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Web development</p>
 
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
+            <!--<li class="project-item  active" data-filter-item data-category="web development">
               <a href="#">
 
                 <figure class="project-img">
@@ -929,7 +997,8 @@
                 <p class="project-category">Web development</p>
 
               </a>
-            </li>
+            </li>-->
+            
 
           </ul>
 
@@ -1143,13 +1212,13 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="mapbox" data-mapbox>
+        <!--<section class="mapbox" data-mapbox>
           <figure>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
-        </section>
+        </section>-->
 
         <section class="contact-form">
 
@@ -1160,12 +1229,16 @@
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
 
+              <input type="tel" name="phonenumber" class="form-input" placeholder="Phone number" required data-form-input>
+
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+
+              <input type="text" name="subject" class="form-input" placeholder="Subject" required data-form-input>
             </div>
 
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" type="submit"  data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
