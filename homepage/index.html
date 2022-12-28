@@ -1,48 +1,4 @@
-<?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 
-require_once '../vendor/phpmailer/phpmailer/src/Exception.php';
-require_once '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require_once '../vendor/phpmailer/phpmailer/src/SMTP.php';
-
-// passing true in constructor enables exceptions in PHPMailer
-$mail = new PHPMailer(true);
-
-try {
-    // Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER; // for detailed debug output
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
-
-    $mail->Username = 'kissleywize10@gmail.com'; // YOUR gmail email
-    $mail->Password = 'youngking'; // YOUR gmail password
-
-    // Sender and recipient settings
-    $mail->setFrom('kissleywize10@gmail.com', 'Okulonye Kingsley');
-    $mail->addAddress('support@vemaloan.com', 'New Message');
-    $mail->addReplyTo('kissleywize10@gmail.com', 'Okulonye Kingsley'); // to set the reply to
-
-    // Setting the email content
-    $mail->IsHTML(true);
-    $mail->Subject = "New Contact Details";
-    $mail->Body = '<h2>Customer Contact Details!</h2>
-    <p><b>Name:</b> '.$fullname.'</p>
-    <p><b>Email:</b> '.$email.'</p>
-    <p><b>Phone Number:</b> '.$phonenumber.'</p>
-    <p><b>Subject:</b> '.$subject.'</p>
-    <p><b>Message:</b> '.$message.'</p>';
-  
-    $mail->send();
-    echo "Email message sent.";
-} catch (Exception $e) {
-    echo "Error in sending email. Mailer Error: {$mail->ErrorInfo}";
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,16 +8,17 @@ try {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Portfolio</title>
-
-  <!--
+  <meta name="title" content="Okulonye Kingsley - Professional web developer">
+  <meta name="description" content="Get user-friendly and professional website for your business and personal needs">
+  <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
 
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
   <!--
     - google font link
@@ -88,11 +45,11 @@ try {
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Kingsley hanrick" width="80">
+          <img src="../assets/images/my-avatar.png" alt="Okulonye Kingsley" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Kingsley hanrick">Okulonye Kingsley</h1>
+          <h1 class="name" title="Okulonye Kingsley">Okulonye Kingsley</h1>
 
           <p class="title">Web developer</p>
         </div>
@@ -120,7 +77,7 @@ try {
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:Kingsley@example.com" class="contact-link">kissleywize10@gmail.com</a>
+              <a href="mailto:kissleywize10@gmail.com" class="contact-link">kissleywize10@gmail.com</a>
             </div>
 
           </li>
@@ -134,7 +91,7 @@ try {
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+12133522795" class="contact-link">+2348108698332</a>
+              <a href="tel:+2348108698332" class="contact-link">+2348108698332</a>
             </div>
 
           </li>
@@ -238,7 +195,7 @@ try {
           </li>-->
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <a href="../contact/contact.php"><button class="navbar-link" >Contact</button></a>
           </li>
 
         </ul>
@@ -286,7 +243,7 @@ try {
           <li class="service-item">
 
             <div class="service-icon-box">
-              <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              <img src="../assets/images/icon-dev.svg" alt="Web development icon" width="40">
             </div>
 
             <div class="service-content-box">
@@ -302,7 +259,7 @@ try {
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
+                <img src="../assets/images/icon-design.svg
                 " alt="design icon" width="40">
               </div>
 
@@ -319,7 +276,7 @@ try {
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="CMS icon" width="40">
+                <img src="../assets/images/icon-app.svg" alt="CMS icon" width="45">
               </div>
 
               <div class="service-content-box">
@@ -335,7 +292,7 @@ try {
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="web hosting icon" width="40">
+                <img src="../assets/images/icon-photo.svg" alt="web hosting icon" width="45">
               </div>
 
               <div class="service-content-box">
@@ -367,18 +324,14 @@ try {
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                  <img src="../assets/images/avatar-1.png" alt="Peter Ifeanyi" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Peter Ifeanyi</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Kingsley was hired to create a corporate identity. We were very pleased with the work done. He has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Since having our new website built by Kingsley, we have seen a 200% increase in the number of online contact forms being filled out and returned to us. Kingsley worked closely with us to provide a site that met all of the criteria that we were looking for. The end result was a website that is attractive, organized and effective. Thanks to Kingsley for all of your hard work and support!
                   </p>
                 </div>
 
@@ -389,18 +342,14 @@ try {
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                  <img src="../assets/images/avatar-2.png" alt="Adewale Jessica" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Adewale Jessica</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Kingsley was hired to create a corporate identity. We were very pleased with the work done. He has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    We re-did our website twice in a 12 month period. There was no comparison between the first company and Kingsley. Professional, Creative, Attentive to Detail, Excellent Communication…If I had contracted with Kingsley the first time I would not have had to do it twice.
                   </p>
                 </div>
 
@@ -411,19 +360,14 @@ try {
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                  <img src="../assets/images/avatar-3.png" alt="Paul Emily" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Paul Emily</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Kingsley was hired to create a corporate identity. We were very pleased with the work done. He has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
+                    With Kingsley's help, we were able to increase the functionality of our website dramatically while cutting our costs. Our website is much more easy to use, has tons of more features than before and is incredibly easy to maintain. We could not be more happy with our new website! Thanks Kingsley!
                 </div>
 
               </div>
@@ -433,18 +377,14 @@ try {
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                  <img src="../assets/images/avatar-4.png" alt="Mark Henry" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mark Henry</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Kingsley was hired to create a corporate identity. We were very pleased with the work done. He has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Kingsley listened to everything we needed and wanted in a new website, then delivered it! Our new website is fun, exciting and easy to use for me and our audiences. I have gone through website redesigns before, and by far, this one was the easiest and least painful. I was listened to and respected through every step. We couldn’t be happier with our new website.
                   </p>
                 </div>
 
@@ -472,25 +412,22 @@ try {
 
             <div class="modal-img-wrapper">
               <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+                <img src="../assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
               </figure>
 
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+              <img src="../assets/images/icon-quote.svg" alt="quote icon">
             </div>
 
             <div class="modal-content">
 
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+              <h4 class="h3 modal-title" data-modal-title>Mike Daniels</h4>
 
-              <time datetime="2021-06-14">14 June, 2021</time>
+              <!--<time datetime="2021-06-14">14 June, 2021</time>-->
+             
 
               <div data-modal-text>
                 <p>
-                  Kingsley was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  Since having our new website built by Kingsley, we have seen a 200% increase in the number of online contact forms being filled out and returned to us. Kingsley worked closely with us to provide a site that met all of the criteria that we were looking for. The end result was a website that is attractive, organized and effective. Thanks to Kingsley for all of your hard work and support!
                 </p>
               </div>
 
@@ -513,37 +450,37 @@ try {
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
+                <img src="../assets/images/logo-1-color.png" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
+                <img src="../assets/images/logo-2-color.png" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
+                <img src="../assets/images/logo-3-color.png" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
+                <img src="../assets/images/logo-4-color.png" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
+                <img src="../assets/images/logo-5-color.png" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
+                <img src="../assets/images/logo-6-color.png" alt="client logo">
               </a>
             </li>
 
@@ -845,7 +782,7 @@ Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-en
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="../assets/images/project-1.jpg" alt="finance" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Finance</h3>
@@ -863,7 +800,7 @@ Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-en
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                  <img src="../assets/images/project-2.png" alt="orizon" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">E-Commerce</h3>
@@ -881,7 +818,7 @@ Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-en
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="../assets/images/project-3.jpg" alt="fundo" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Freight</h3>
@@ -899,7 +836,7 @@ Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-en
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                  <img src="../assets/images/project-4.png" alt="brawlhalla" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Charity</h3>
@@ -917,7 +854,7 @@ Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-en
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                  <img src="../assets/images/project-5.png" alt="dsm." loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Finance</h3>
@@ -935,7 +872,7 @@ Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-en
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                  <img src="../assets/images/project-6.png" alt="metaspark" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Counter</h3>
@@ -1168,7 +1105,7 @@ Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-en
               <a href="#">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                  <img src="../assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
                 </figure>
 
                 <div class="blog-content">
@@ -1261,7 +1198,7 @@ Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-en
   <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+  <script src="../assets/js/script.js"></script>
 
   <!--
     - ionicon link
