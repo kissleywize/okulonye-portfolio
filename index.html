@@ -1,1210 +1,364 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio</title>
-  <meta name="title" content="Okulonye Kingsley - Professional web developer">
-  <meta name="description" content="Get user-friendly and professional website for your business and personal needs">
-  <!-- 
-    - favicon
-  -->
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Okulonye Kingsley is a Full-Stack Software Developer building modern web applications, SaaS platforms, business systems and digital products.">
+  <meta name="author" content="Okulonye Kingsley">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Okulonye Kingsley | Full-Stack Software Developer">
+  <meta property="og:description" content="Full-Stack Software Developer focused on SaaS, web applications, backend engineering and digital products.">
+  <title>Okulonye Kingsley | Full-Stack Software Developer</title>
   <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-  <!--
-    - #MAIN
-  -->
-
   <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
     <aside class="sidebar" data-sidebar>
-
       <div class="sidebar-info">
-
         <figure class="avatar-box">
-          <img src="assets/images/my-avatar.png" alt="Okulonye Kingsley" width="80">
+          <img src="assets/images/my-avatar.png" alt="Portrait of Okulonye Kingsley" width="80">
         </figure>
 
         <div class="info-content">
           <h1 class="name" title="Okulonye Kingsley">Okulonye Kingsley</h1>
-
-          <p class="title">Web developer</p>
+          <p class="title">Full-Stack Software Developer</p>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
+        <button class="info_more-btn" data-sidebar-btn aria-label="Show contact details">
           <span>Show Contacts</span>
-
           <ion-icon name="chevron-down"></ion-icon>
         </button>
-
       </div>
 
       <div class="sidebar-info_more">
-
         <div class="separator"></div>
-
         <ul class="contacts-list">
-
           <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
+            <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
               <a href="mailto:kissleywize10@gmail.com" class="contact-link">kissleywize10@gmail.com</a>
             </div>
-
           </li>
-
           <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
+            <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-
-              <a href="tel:+2348108698332" class="contact-link">+2348108698332</a>
+              <a href="tel:+2348108698332" class="contact-link">+234 810 869 8332</a>
             </div>
-
           </li>
-
-           <!--<li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-           <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 23, 1982</time>
-            </div>
-
-          </li>-->
-
           <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
+            <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
               <address>Asaba, Delta State, Nigeria</address>
             </div>
-
           </li>
-
         </ul>
 
         <div class="separator"></div>
-
         <ul class="social-list">
-
-  <li class="social-item">
-            <a href="https://github.com/kissleywize" class="social-link">
+          <li class="social-item">
+            <a href="https://github.com/kissleywize" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
-            <a href="https://www.facebook.com/profile.php?id=100070207226746" class="social-link">
+            <a href="https://www.facebook.com/profile.php?id=100070207226746" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
-            <a href="https://twitter.com/bigman_kings?s=21&t=nF4KGZ7sBc1f1aH0JHaG5w" class="social-link">
+            <a href="https://twitter.com/bigman_kings?s=21&t=nF4KGZ7sBc1f1aH0JHaG5w" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
-            <a href="https://instagram.com/bigman.kings?igshid=YmMyMTA2M2Y=" class="social-link">
+            <a href="https://instagram.com/bigman.kings?igshid=YmMyMTA2M2Y=" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
-
         </ul>
-
       </div>
-
     </aside>
 
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
     <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
+      <nav class="navbar" aria-label="Main navigation">
         <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <!--<li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>-->
-
-      <!--    <li class="navbar-item">
-            <a href="../contact/contact.php"><button class="navbar-link" >Contact</button></a>
-          </li>-->
-
+          <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
         </ul>
-
       </nav>
 
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
+      <article class="about active" data-page="about">
         <header>
           <h2 class="h2 article-title">About me</h2>
         </header>
 
         <section class="about-text">
           <p>
-            I'm a full-stack web developer from Delta State, Nigeria. I'm a logical and results-driven Web Developer dedicated to building and optimizing user-focused websites for customers with various business objectives.
+            I'm Okulonye Kingsley, a Full-Stack Software Developer based in Nigeria. I build modern web applications,
+            SaaS platforms, business management systems and digital products that solve practical problems.
           </p>
-
           <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Judicious and creative when crafting effective websites, apps and platforms to propel competitive advantage and revenue growth.
+            My work covers the full development process, from planning and frontend implementation to backend
+            engineering, database design, API integrations, deployment and ongoing maintenance. I work with modern
+            frameworks and tools including Laravel, React, Vue.js, Next.js, Node.js and TypeScript.
+          </p>
+          <p>
+            I approach development with both technical and product thinking. I focus on understanding how a business
+            operates, identifying workflow problems and building software that is useful, maintainable and ready to grow.
           </p>
         </section>
-
-
-        <!--
-          - service
-        -->
 
         <section class="service">
-
-          <h3 class="h3 service-title">What I'm doing</h3>
-
+          <h3 class="h3 service-title">What I do</h3>
           <ul class="service-list">
-
-          </li>
-
-          <li class="service-item">
-
-            <div class="service-icon-box">
-              <img src="assets/images/icon-dev.svg" alt="Web development icon" width="40">
-            </div>
-
-            <div class="service-content-box">
-              <h4 class="h4 service-item-title">Web development</h4>
-
-              <p class="service-item-text">
-                High-quality development of sites at the professional level.
-              </p>
-            </div>
-
-          </li>
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <img src="assets/images/icon-dev.svg" alt="Application development" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
-
-                <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
-                </p>
+                <h4 class="h4 service-item-title">SaaS & Web Applications</h4>
+                <p class="service-item-text">Custom platforms, business management systems, dashboards and subscription-based products.</p>
               </div>
-
-          
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="assets/images/icon-app.svg" alt="CMS icon" width="45">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">CMS</h4>
-
-                <p class="service-item-text">
-                  Professional development, integration and management of wordpress websites.
-                </p>
-              </div>
-
             </li>
-
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="assets/images/icon-photo.svg" alt="web hosting icon" width="45">
+                <img src="assets/images/icon-design.svg" alt="Frontend development" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web hostiog</h4>
-
-                <p class="service-item-text">
-                  Generated web hosting presence to accommodate specified needs and maintain files on account.
-                </p>
+                <h4 class="h4 service-item-title">Frontend Development</h4>
+                <p class="service-item-text">Responsive interfaces and accessible user experiences built with modern frontend technologies.</p>
               </div>
-
             </li>
-
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="assets/images/icon-app.svg" alt="Backend engineering" width="45">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Backend & API Engineering</h4>
+                <p class="service-item-text">Application logic, database architecture, REST APIs, authentication and third-party integrations.</p>
+              </div>
+            </li>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="assets/images/icon-photo.svg" alt="Automation and deployment" width="45">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Automation & Deployment</h4>
+                <p class="service-item-text">Workflow automation, payment integrations, hosting setup, deployment and application maintenance.</p>
+              </div>
+            </li>
           </ul>
-
         </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="assets/images/avatar-1.png" alt="Peter Ifeanyi" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Peter Ifeanyi</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Since having our new website built by Kingsley, we have seen a 200% increase in the number of online contact forms being filled out and returned to us. Kingsley worked closely with us to provide a site that met all of the criteria that we were looking for. The end result was a website that is attractive, organized and effective. Thanks to Kingsley for all of your hard work and support!
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="assets/images/avatar-2.png" alt="Adewale Jessica" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Adewale Jessica</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    We re-did our website twice in a 12 month period. There was no comparison between the first company and Kingsley. Professional, Creative, Attentive to Detail, Excellent Communication…If I had contracted with Kingsley the first time I would not have had to do it twice.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="assets/images/avatar-3.png" alt="Paul Emily" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Paul Emily</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    With Kingsley's help, we were able to increase the functionality of our website dramatically while cutting our costs. Our website is much more easy to use, has tons of more features than before and is incredibly easy to maintain. We could not be more happy with our new website! Thanks Kingsley!
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="assets/images/avatar-4.png" alt="Mark Henry" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mark Henry</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Kingsley listened to everything we needed and wanted in a new website, then delivered it! Our new website is fun, exciting and easy to use for me and our audiences. I have gone through website redesigns before, and by far, this one was the easiest and least painful. I was listened to and respected through every step. We couldn’t be happier with our new website.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Mike Daniels</h4>
-
-              <!--<time datetime="2021-06-14">14 June, 2021</time>-->
-             
-
-              <div data-modal-text>
-                <p>
-                  Since having our new website built by Kingsley, we have seen a 200% increase in the number of online contact forms being filled out and returned to us. Kingsley worked closely with us to provide a site that met all of the criteria that we were looking for. The end result was a website that is attractive, organized and effective. Thanks to Kingsley for all of your hard work and support!
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
 
         <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
+          <h3 class="h3 clients-title">Core technologies</h3>
+          <div class="content-card">
+            <p class="timeline-text">
+              Laravel · PHP · JavaScript · TypeScript · React · Vue.js · Next.js · Node.js · Express.js ·
+              Tailwind CSS · Alpine.js · Livewire · MySQL · PostgreSQL · MongoDB · Firebase
+            </p>
+          </div>
         </section>
-
       </article>
 
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
       <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
+        <header><h2 class="h2 article-title">Resume</h2></header>
 
         <section class="timeline">
-
           <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
+            <div class="icon-box"><ion-icon name="school-outline"></ion-icon></div>
             <h3 class="h3">Education</h3>
           </div>
-
           <ol class="timeline-list">
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Federal University Of Petroleum Resources Effurun, Nigeria</h4>
-
+              <h4 class="h4 timeline-item-title">Federal University of Petroleum Resources, Effurun, Nigeria</h4>
               <span>2018 — 2023</span>
-
-              <p class="timeline-text">
-                Intercalated bachelor of physics.
-              </p>
-
+              <p class="timeline-text">Intercalated Bachelor's degree in Physics.</p>
             </li>
-
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Orient Academy</h4>
-
               <span>2011 — 2017</span>
-
-              <p class="timeline-text">
-                SSC in scince.
-              </p>
-
+              <p class="timeline-text">Senior Secondary School Certificate.</p>
             </li>
-
-           <!-- <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
-
-              <span>2002 — 2004</span>
-
-              <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
-            </li>-->
-
           </ol>
-
         </section>
 
         <section class="timeline">
-
           <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
+            <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+            <h3 class="h3">Professional experience</h3>
           </div>
-
           <ol class="timeline-list">
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web developer</h4>
-
+              <h4 class="h4 timeline-item-title">Full-Stack Software Developer</h4>
               <span>2019 — Present</span>
-
               <p class="timeline-text">
-                
-Coded websites using HTML, CSS, JavaScript and jQuery languages. Oversaw back-end development using PHP to maintain website integrity.
+                Develop and maintain web applications and business platforms using PHP, Laravel, JavaScript and
+                modern frontend frameworks. Work across interface development, backend logic, database design,
+                API integration, testing and deployment.
               </p>
-
             </li>
-
-            
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Wordpress developer</h4>
-
-              <span>2019 — Present</span>
-
+              <h4 class="h4 timeline-item-title">SaaS & Business Application Development</h4>
+              <span>Project-based experience</span>
               <p class="timeline-text">
-                Provided full-stack website development using WordPress. Provided security maintenance and patching on website interface to maintain viability after launch.
+                Build software for operational workflows, hospitality management, accounting and business
+                administration. Translate product requirements into practical features and maintainable systems.
               </p>
-
             </li>
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
+              <h4 class="h4 timeline-item-title">WordPress & Web Development</h4>
               <span>2019 — Present</span>
-
               <p class="timeline-text">
-                Created designs and layouts of website, web pages. Created brand new website, improved and updated already existing site.
+                Develop and maintain business websites and content-managed websites, with attention to responsive
+                layouts, performance, security updates and ongoing support.
               </p>
-
             </li>
-
-
           </ol>
-
         </section>
 
         <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
+          <h3 class="h3 skills-title">Technical expertise</h3>
           <ul class="skills-list content-card">
-
             <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web development</h5>
-                <data value="99">99%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 99%;"></div>
-              </div>
-
+              <h4 class="h4">Frontend development</h4>
+              <p class="timeline-text">HTML · CSS · JavaScript · TypeScript · Tailwind CSS · Bootstrap · Alpine.js</p>
             </li>
             <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">HTML</h5>
-                <data value="95">95%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 95%;"></div>
-              </div>
-
+              <h4 class="h4">Frontend frameworks</h4>
+              <p class="timeline-text">React · Vue.js · Next.js</p>
             </li>
-
             <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Css</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
+              <h4 class="h4">Backend development</h4>
+              <p class="timeline-text">PHP · Laravel · Livewire · Node.js · Express.js · REST APIs</p>
             </li>
-
             <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Php</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
+              <h4 class="h4">Databases & backend services</h4>
+              <p class="timeline-text">MySQL · PostgreSQL · MongoDB · Firebase</p>
             </li>
-
             <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Javascript</h5>
-                <data value="87">87%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 87%;"></div>
-              </div>
-
+              <h4 class="h4">Tools & infrastructure</h4>
+              <p class="timeline-text">Git · GitHub · Postman · Docker · VPS deployment · cPanel · n8n</p>
             </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="99">99%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 99%;"></div>
-              </div>
-
-            </li>
-
           </ul>
-
         </section>
-
       </article>
 
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
       <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
+        <header><h2 class="h2 article-title">Selected projects</h2></header>
         <section class="projects">
-
           <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
+            <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+            <li class="filter-item"><button data-filter-btn>Applications</button></li>
+            <li class="filter-item"><button data-filter-btn>Web development</button></li>
+            <li class="filter-item"><button data-filter-btn>E-commerce</button></li>
           </ul>
 
           <div class="filter-select-box">
-
             <button class="filter-select" data-select>
-
               <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
+              <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
             </button>
-
             <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Applications</button></li>
+              <li class="select-item"><button data-select-item>Web development</button></li>
+              <li class="select-item"><button data-select-item>E-commerce</button></li>
             </ul>
-
           </div>
 
           <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-             
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                   
-                  </div>
-
-                  <img src="assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
+            <li class="project-item active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                <img src="assets/images/project-1.jpg" alt="Existing portfolio image used as the Hotook project preview" loading="lazy">
+              </figure>
+              <h3 class="project-title">Hotook</h3>
+              <p class="project-category">Hospitality management & booking SaaS</p>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              
-
-                <figure class="project-img">
-                 <div class="project-item-icon-box">
-               
-                  </div>
-
-                  <img src="assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">E-Commerce</h3>
-
-                <p class="project-category">Web development</p>
-
-           
+            <li class="project-item active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                <img src="assets/images/project-2.png" alt="Existing portfolio image used as the DABACS project preview" loading="lazy">
+              </figure>
+              <h3 class="project-title">DABACS</h3>
+              <p class="project-category">Business accounting & management software</p>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-           
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-               
-                  </div>
-
-                  <img src="assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Freight</h3>
-
-                <p class="project-category">Web development</p>
-
-            
+            <li class="project-item active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                <img src="assets/images/project-3.jpg" alt="Existing portfolio image used as the ArjoSwift project preview" loading="lazy">
+              </figure>
+              <h3 class="project-title">ArjoSwift</h3>
+              <p class="project-category">Logistics & shipment tracking</p>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                  
-                  </div>
-
-                  <img src="assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Charity</h3>
-
-                <p class="project-category">Web development</p>
-
-            
+            <li class="project-item active" data-filter-item data-category="e-commerce">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                <img src="assets/images/project-4.png" alt="Existing portfolio image used as an e-commerce project preview" loading="lazy">
+              </figure>
+              <h3 class="project-title">E-commerce Solutions</h3>
+              <p class="project-category">E-commerce</p>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-             
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                   
-                  </div>
-
-                  <img src="assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-            
+            <li class="project-item active" data-filter-item data-category="web development">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                <img src="assets/images/project-5.png" alt="Existing portfolio image used as a corporate website project preview" loading="lazy">
+              </figure>
+              <h3 class="project-title">Corporate Websites</h3>
+              <p class="project-category">Web development</p>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-            <!--  <a href="https://brighterstar.in/">-->
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-           <!-- <ion-icon name="eye-outline"></ion-icon>-->
-                  </div>
-
-                  <img src="assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Counter</h3>
-
-                <p class="project-category">Web development</p>
-
-             
+            <li class="project-item active" data-filter-item data-category="web development">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="open-outline"></ion-icon></div>
+                <img src="assets/images/project-6.png" alt="Existing portfolio image used as a custom web project preview" loading="lazy">
+              </figure>
+              <h3 class="project-title">Custom Web Solutions</h3>
+              <p class="project-category">Web development</p>
             </li>
-
-            <!--<li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>-->
-            
-
           </ul>
-
         </section>
-
       </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
 
       <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <!--<section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>-->
-
+        <header><h2 class="h2 article-title">Contact</h2></header>
+        <section class="about-text">
+          <p>Have a product idea, a software project or a development opportunity? Get in touch to discuss the requirements and next steps.</p>
+        </section>
         <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
+          <h3 class="h3 form-title">Send a message</h3>
           <form action="#" class="form" data-form>
-
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="tel" name="phonenumber" class="form-input" placeholder="Phone number" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-
-              <input type="text" name="subject" class="form-input" placeholder="Subject" required data-form-input>
             </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit"  data-form-btn>
+            <input type="text" name="subject" class="form-input" placeholder="Subject" required data-form-input>
+            <textarea name="message" class="form-input" placeholder="Tell me about your project or opportunity" required data-form-input></textarea>
+            <button class="form-btn" type="submit" data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
-
           </form>
-
+          <p class="form-note">You can also email me directly at <a href="mailto:kissleywize10@gmail.com">kissleywize10@gmail.com</a>.</p>
         </section>
-
       </article>
-
     </div>
-
   </main>
 
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
   <script src="assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
-
 </html>
